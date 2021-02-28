@@ -16,6 +16,9 @@
 
 # [스마트 홈 매니지먼트 챗봇 백엔드 서버 구축기]
 
+- backend server : Fastapi
+- backend Database : SQLAlchemy (ORM)
+
 - Break Plan : 2021-02-28 ~
 
 > 0.  fast api 구축 테스트 // [2021-02-28] 😋 <br>

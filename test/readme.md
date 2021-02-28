@@ -1,4 +1,4 @@
-## 1. fastapi
+## 1. fastapi-from-blog 💯
 
     https://soyoung-new-challenge.tistory.com/81
 
@@ -15,3 +15,11 @@
 6.  <code>Item class를 정의하여(main.py), test.py로 확인</code>
 
     - post로는 405 error 발생, get으로 하면 정상적인 결과 확인 가능
+
+<br>
+
+## 2. pydantic-from-doc
+
+    https://pydantic-docs.helpmanual.io
+
+1. model tutorial
