@@ -18,8 +18,9 @@
 
 <br>
 
-## 2. pydantic-from-doc
+## 2. pydantic-from-doc 😋
 
     https://pydantic-docs.helpmanual.io
 
 1. model tutorial
+2. recursive-model
