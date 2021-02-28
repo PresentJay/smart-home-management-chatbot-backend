@@ -12,3 +12,6 @@
 
 4.  <code>localhost:8000에서 return값 확인</code>
 5.  <code>localhost:8000/docs에서 openapi 문서 확인</code>
+6.  <code>Item class를 정의하여(main.py), test.py로 확인</code>
+
+    - post로는 405 error 발생, get으로 하면 정상적인 결과 확인 가능
