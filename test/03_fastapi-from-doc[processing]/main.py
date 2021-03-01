@@ -45,8 +45,15 @@ async def read_user_me():
     return {"user_id" : "the current user"}
 
 @app.get("/users/{user_id}")
-async def read_user(user_id: str):
-    return {"user_id": user_id}
+async def read_user(user_id: str, q: Optional[str] = None, short: bool = False):
+    user = {"user_id": user_id}
+    if q:
+        user.update({"q": q})
+    if not short:
+        user.update(
+            {"description": "This is an amazing item that has a long description"}
+        )
+    return user
 
 @app.get("/models/{model_name}")
 async def get_model(model_name: ModelName):
