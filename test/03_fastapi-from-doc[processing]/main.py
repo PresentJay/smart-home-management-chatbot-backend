@@ -65,6 +65,7 @@ async def get_model(model_name: ModelName):
     
     return {"model_name": model_name, "message": "Have some residuals"} # residual - 잔차
 
+
 @app.get("/users/{user_id}/items/{item_id}")
 async def read_user_item(
     user_id: int, item_id:str, q: Optional[str] = None, short: bool = False        
@@ -76,4 +77,10 @@ async def read_user_item(
         item.update(
             {"description": "This is an amazing item that has a long description"}
         )
+    return item
+
+# @app.get("/models/{model_name}")
+@app.get("/models/{model_name}/items/{item_id}")
+async def read_model_item(model_name: str, item_id: str):
+    item = {"item_id": item_id, "related_model": model_name}
     return item
