@@ -24,3 +24,18 @@
 
 1. model tutorial
 2. recursive-model
+3. orm instance
+
+<br>
+
+## 3. fastapi-from-doc 😋
+
+    https://fastapi.tiangolo.com/ko/tutorial/
+
+1. basic creation
+2. put endpoint
+3. enumeration
+4. path parameters
+5. query parameter type conversion
+6. multiple query parameters & paths
+7. required query parameter
