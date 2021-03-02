@@ -39,3 +39,15 @@
 5. query parameter type conversion
 6. multiple query parameters & paths
 7. required query parameter
+
+<br>
+
+## 4. heroku - github auto deployment 💯
+
+    https://test-fastapi-service.herokuapp.com/
+
+- must have Procfile in root directory of branch.
+- uvicorn must be version lower than 0.12.0 (because of uvloop dependancy error)
+- uvloop need to python version upper than 3.7, and basic heroku python version is 3.6.0. so we need to indicate the version. (runtime.txt)
+  <br>
+  check this url > https://devcenter.heroku.com/articles/python-runtimes/
