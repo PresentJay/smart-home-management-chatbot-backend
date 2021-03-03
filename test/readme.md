@@ -39,6 +39,8 @@
 5. query parameter type conversion
 6. multiple query parameters & paths
 7. required query parameter
+8. basic model
+9. request body + path parameters + query parameters
 
 <br>
 
