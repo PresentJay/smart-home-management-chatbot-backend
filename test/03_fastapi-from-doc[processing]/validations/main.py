@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import List,Optional
 from fastapi import FastAPI, Query
 
 app = FastAPI()
@@ -15,3 +15,8 @@ async def read_items(q: Optional[str] = Query(
 # q is not required
 # can set the min or max length
 # also can set the regular expression
+
+@app.get("/users/")
+async def read_users(q: Optional[List[str]] = Query(None)):
+    query_users = {"q" : q}
+    return query_users
