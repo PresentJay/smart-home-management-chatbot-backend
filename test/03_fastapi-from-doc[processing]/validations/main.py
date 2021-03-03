@@ -22,10 +22,13 @@ async def read_items(q: Optional[str] = Query(
 # metadata title, description
 
 @app.get("/users/")
-async def read_users(q: Optional[List[str]] = Query(None)):
+async def read_users(q: Optional[List[str]] = Query(None, alias="user-query")):
     query_users = {"q" : q}
     return query_users
 
 # List[str] checks in List, and validate that members are str type
 # but just list wouldn't.
+
+# alias enable request like this => /items/?item-query=foobaritems
+# instead of => /items/?q=foobaritems
 
