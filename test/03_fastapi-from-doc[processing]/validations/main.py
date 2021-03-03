@@ -5,7 +5,10 @@ app = FastAPI()
 
 @app.get("/items/")
 async def read_items(q: Optional[str] = Query(
-    ...,min_length=3, max_length=50, regex="^fixedquery$"
+    ...,
+    title= "Query String",
+    description= "Query string for the items to search in the database that have a good match",
+    min_length=3, max_length=50, regex="^fixedquery$"
     )):
     results = {"items": [{"item_id": "Foo"}, {"item_id": "Bar"}]}
     if q:
@@ -16,7 +19,13 @@ async def read_items(q: Optional[str] = Query(
 # can set the min or max length
 # also can set the regular expression
 
+# metadata title, description
+
 @app.get("/users/")
 async def read_users(q: Optional[List[str]] = Query(None)):
     query_users = {"q" : q}
     return query_users
+
+# List[str] checks in List, and validate that members are str type
+# but just list wouldn't.
+
