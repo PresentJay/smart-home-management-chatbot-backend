@@ -1,5 +1,5 @@
 from typing import List,Optional
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Query, Path
 
 app = FastAPI()
 
@@ -21,6 +21,18 @@ async def read_items(q: Optional[str] = Query(
 # also can set the regular expression
 
 # metadata title, description
+
+@app.get("/items/{item_id}")
+async def read_items(
+        item_id: int = Path(..., title="The ID of the item to get"),
+        q: Optional[str] = Query(None, alias="item-query")
+):    
+    results = {"item_id" : item_id}
+    if q:
+        results.update(y)({"q": q})
+        
+    return results
+
 
 @app.get("/users/")
 async def read_users(q: Optional[List[str]] = Query(None, alias="user-query")):
