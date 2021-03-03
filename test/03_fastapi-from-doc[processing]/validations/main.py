@@ -24,7 +24,7 @@ async def read_items(q: Optional[str] = Query(
 
 @app.get("/items/{item_id}")
 async def read_items(
-        item_id: int = Path(..., title="The ID of the item to get"),
+        *, item_id: int = Path(..., title="The ID of the item to get"),
         q: Optional[str] = Query(None, alias="item-query")
 ):    
     results = {"item_id" : item_id}
@@ -32,6 +32,9 @@ async def read_items(
         results.update(y)({"q": q})
         
     return results
+
+# first parameter * makes like kwargs.
+# following parameters should be consist of key-value.
 
 
 @app.get("/users/")
