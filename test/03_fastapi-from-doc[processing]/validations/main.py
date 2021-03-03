@@ -24,7 +24,8 @@ async def read_items(q: Optional[str] = Query(
 
 @app.get("/items/{item_id}")
 async def read_items(
-        *, item_id: int = Path(..., title="The ID of the item to get"),
+        *,
+        item_id: int = Path(..., title="The ID of the item to get", ge=1, le=1000),
         q: Optional[str] = Query(None, alias="item-query")
 ):    
     results = {"item_id" : item_id}
@@ -35,7 +36,10 @@ async def read_items(
 
 # first parameter * makes like kwargs.
 # following parameters should be consist of key-value.
-
+# gt : greater than
+# ge : greater than or equal
+# lt : less than
+# lt : less than or equal
 
 @app.get("/users/")
 async def read_users(q: Optional[List[str]] = Query(None, alias="user-query")):
