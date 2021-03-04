@@ -41,6 +41,7 @@
 7. required query parameter
 8. basic model
 9. request body + path parameters + query parameters
+10. Query(string)/Path(numeric) validation
 
 <br>
 
