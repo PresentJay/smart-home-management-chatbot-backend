@@ -19,7 +19,7 @@ class User(BaseModel):
 async def update_item(
     *,
     item_id:int,
-    item: Item,
+    item: Item = Body(..., embed=True),
     user: User,
     importance: int = Body(..., gt=0), # required
     q: Optional[str] = None
