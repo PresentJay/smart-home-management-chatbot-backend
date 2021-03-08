@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, List
 
 from fastapi import FastAPI, Path
 from pydantic import BaseModel, Field
@@ -14,6 +14,7 @@ class Item(BaseModel):
         ..., gt=0, description="The price must be greater than zero."
     )
     tax: Optional[float] = None
+    tags: list = []
     
 class User(BaseModel):
     username: str
