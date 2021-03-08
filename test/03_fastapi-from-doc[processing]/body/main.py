@@ -49,3 +49,7 @@ async def update_item(
     if q:
         results.update({"q": q})
     return results
+
+@app.post("/images/multiple/")
+async def create_multiple_images(images: List[Image]):
+    return images
