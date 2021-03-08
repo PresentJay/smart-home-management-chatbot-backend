@@ -26,6 +26,16 @@ class User(BaseModel):
     username: str
     full_name: Optional[str] = None
     
+class Offer(BaseModel):
+    name: str
+    description: Optional[str] = None
+    price: float
+    items: List[Item]
+    
+@app.post("/offers/")
+async def create_offer(offer: Offer):
+    return offer
+    
 @app.put("/items/{item_id}")
 async def update_item(
     *,
