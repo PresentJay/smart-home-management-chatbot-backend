@@ -1,9 +1,13 @@
-from typing import Optional, List
+from typing import Optional, List, Set
 
 from fastapi import FastAPI, Path
 from pydantic import BaseModel, Field
 
 app = FastAPI()
+
+class Image(BaseModel):
+    url: str
+    name: str
 
 class Item(BaseModel):
     name: str
@@ -14,7 +18,8 @@ class Item(BaseModel):
         ..., gt=0, description="The price must be greater than zero."
     )
     tax: Optional[float] = None
-    tags: list = []
+    tags: Set[str] = set()
+    image: Optional[Image] = None
     
 class User(BaseModel):
     username: str
