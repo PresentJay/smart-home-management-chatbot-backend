@@ -1,12 +1,12 @@
 from typing import Optional, List, Set
 
 from fastapi import FastAPI, Path
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, HttpUrl
 
 app = FastAPI()
 
 class Image(BaseModel):
-    url: str
+    url: HttpUrl
     name: str
 
 class Item(BaseModel):
