@@ -20,6 +20,7 @@ class Item(BaseModel):
     tax: Optional[float] = None
     tags: Set[str] = set()
     image: Optional[Image] = None
+    images: Optional[List[Image]] = None
     
 class User(BaseModel):
     username: str
