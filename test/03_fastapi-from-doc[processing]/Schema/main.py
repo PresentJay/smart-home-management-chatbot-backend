@@ -1,6 +1,6 @@
 from typing import Optional
 
-from fastapi import FastAPI
+from fastapi import Body, FastAPI
 from pydantic import BaseModel, Field
 
 app = FastAPI()
