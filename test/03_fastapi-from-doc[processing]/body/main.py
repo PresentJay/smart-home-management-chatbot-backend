@@ -1,4 +1,4 @@
-from typing import Optional, List, Set
+from typing import Optional, List, Set, Dict
 
 from fastapi import FastAPI, Path
 from pydantic import BaseModel, Field, HttpUrl
@@ -53,3 +53,8 @@ async def update_item(
 @app.post("/images/multiple/")
 async def create_multiple_images(images: List[Image]):
     return images
+
+
+@app.post("/index-weights/")
+async def create_index_weights(weights: Dict[int, float]):
+    return weights
